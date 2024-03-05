@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URL Shortener</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Create URL</a></li>
+        <li><a href="#">Manage URLs</a></li>
+        <li><a href="#">Sign In</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="create-url">
+      <h2>Create a Short URL</h2>
+      <form>
+        <label for="long-url">Long URL:</label>
+        <input type="text" id="long-url" name="long-url" required>
+
+        <label for="expiration-date">Expiration Date:</label>
+        <input type="date" id="expiration-date" name="expiration-date">
+
+        <label for="start-date">Start Date:</label>
+        <input type="date" id="start-date" name="start-date">
+
+        <button type="submit">Create Short URL</button>
+      </form>
+    </section>
+
+    <section id="manage-urls">
+      <h2>Manage Your URLs</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Short URL</th>
+            <th>Long URL</th>
+            <th>Expiration Date</th>
+            <th>Start Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- URLs will be dynamically added here -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    &copy; URL Shortener
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
