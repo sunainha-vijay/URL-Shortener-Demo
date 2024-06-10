@@ -1,70 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>URL Shortener</title>
- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
- <script src="https://apis.google.com/js/client:platform.js?onload=start" async defer></script>
-  <script>
-    function start() {
-      gapi.load('auth2', function() {
-        auth2 = gapi.auth2.init({
-          client_id: '767607664851-ni9f9n30qondo4h0situ5f2n7stc6cis.apps.googleusercontent.com',
-          // Scopes to request in addition to 'profile' and 'email'
-          //scope: 'additional_scope'
-        });
-      });
-    }
-  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shorten Your Links with Ease</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>URL Shortener</h1>
-    <form id="urlForm">
-        <label for="longUrl">Enter Long URL:</label><br>
-        <input type="text" id="longUrl" name="longUrl" required><br>
-        <button type="submit">Shorten URL</button>
-    </form>
-    <div id="shortUrlContainer" style="display: none;">
-        <p>Short URL: <span id="shortUrl"></span></p>
-    </div>
+  <div class="container">
+    <h1 class="title">Shorten Your Links</h1>
+    <p class="description">Make managing long URLs a breeze with our powerful tools.</p>
 
-    <script src="script.js"></script>
-    <button id="signinButton">Sign in with Google</button>
-<script>
-  $('#signinButton').click(function() {
-    // signInCallback defined in step 6.
-    auth2.grantOfflineAccess().then(signInCallback);
-  });
-</script>
-<script>
-function signInCallback(authResult) {
-  if (authResult['code']) {
+    <p class="highlight">Sign up for an account to shorten your URLs instantly and unlock exclusive features.</p>
 
-    // Hide the sign-in button now that the user is authorized, for example:
-    $('#signinButton').attr('style', 'display: none');
+    <a href="#" class="signup-btn">Sign Up Now</a>
 
-    // Send the code to the server
-    $.ajax({
-      type: 'POST',
-      url: 'http://example.com/storeauthcode',
-      // Always include an `X-Requested-With` header in every AJAX request,
-      // to protect against CSRF attacks.
-      headers: {
-        'X-Requested-With': 'XMLHttpRequest'
-      },
-      contentType: 'application/octet-stream; charset=utf-8',
-      success: function(result) {
-        // Handle or verify the server response.
-      },
-      processData: false,
-      data: authResult['code']
-    });
-  } else {
-    // There was an error.
-  }
-}
-</script>
+    <p class="disclaimer">Shortened links are for non-commercial use only.</p>
+  </div>
 </body>
-
 </html>
